@@ -15,7 +15,7 @@ You can find in the **results** folder all the classes to process the YOLO's res
 You can launch the GUI with the following command:
 `python3 Launcher.py`
 
-You can downloads the `yolov3-helmet.weights` file [here](https://drive.google.com/file/d/1Ospb0zUYy-SDq3h9mtaGKDYpnP2UmnHY/view?usp=sharing)
+You can download the `yolov3-helmet.weights` file [here](https://drive.google.com/file/d/1Ospb0zUYy-SDq3h9mtaGKDYpnP2UmnHY/view?usp=sharing)
 
 To launch the training use the following command:<br/>
 `./darknet detector test cfg/helmet.data cfg/yolov3-helmet.cfg weights/yolov3-helmet.weights`
