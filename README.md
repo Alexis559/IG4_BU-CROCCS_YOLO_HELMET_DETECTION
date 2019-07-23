@@ -2,9 +2,32 @@
 
 Yolo Application to detect drivers who are not wearing helmets while there are driving.
 
+Trained on 3 classes using the [Coco dataset](https://cocodataset.org/#home):
+
+* Person
+* Motobike
+* Helmet
+
+The training was made by using [Google Colaboratory](https://colab.research.google.com)
+
+You can find in the **results** folder all the classes to process the YOLO's results analysis
+
+You can launch the GUI with the following command:
+`python3 Launcher.py`
+
+
+To launch the training use the following command:
+`./darknet detector test cfg/helmet.data cfg/yolov3-helmet.cfg weights/yolov3-helmet.weights`
+
+To test the neural network use the following command:
+`./darknet detector test cfg/helmet.data cfg/yolov3-helmet.cfg weights/yolov3-helmet.weights *path to the image*`
+
+
 ### Technologies:
 [YOLOv3](https://pjreddie.com/darknet/yolo/)<br/>
-[Darknet fork from AlexeyAB](https://github.com/AlexeyAB/darknet)
+[Darknet fork from AlexeyAB](https://github.com/AlexeyAB/darknet)<br/>
+[Python 3](https://www.python.org/download/releases/3.0/)<br/>
+[tkinter](https://docs.python.org/3/library/tkinter.html#module-tkinter)<br/>
 
 ### Sources:
 [How to train YOLOv3 with Google Colab](https://colab.research.google.com/drive/1lTGZsfMaGUpBG4inDIQwIJVW476ibXk_#scrollTo=Cqo1gtPX6BXO)
