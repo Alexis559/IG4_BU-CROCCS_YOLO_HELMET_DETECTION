@@ -16,12 +16,13 @@ You can launch the GUI with the following command:
 `python3 Launcher.py`
 
 
-To launch the training use the following command:
+To launch the training use the following command:<br/>
 `./darknet detector test cfg/helmet.data cfg/yolov3-helmet.cfg weights/yolov3-helmet.weights`
 
-To test the neural network use the following command:
+To test the neural network use the following command:<br/>
 `./darknet detector test cfg/helmet.data cfg/yolov3-helmet.cfg weights/yolov3-helmet.weights *path to the image*`
 
+You can find my Google colab notebook [here](https://colab.research.google.com/drive/18G9Vvop254As43gVXhPCXvP-6u6lsgqD).
 
 ### Technologies:
 [YOLOv3](https://pjreddie.com/darknet/yolo/)<br/>
