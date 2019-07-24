@@ -30,7 +30,7 @@ To test the neural network use the following command:<br/>
 Go into the `x64_windows_darknet` folder
 
 To launch the training use the following command:<br/>
-`.\darknet.exe detector test ../cfg/helmet.data ../cfg/yolov3-helmet.cfg ../weights/yolov3-helmet.weights`
+`.\darknet.exe detector train ../cfg/helmet.data ../cfg/yolov3-helmet.cfg ../weights/yolov3-helmet.weights`
 
 To test the neural network use the following command:<br/>
 `.\darknet.exe detector test ../cfg/helmet.data ../cfg/yolov3-helmet.cfg ../weights/yolov3-helmet.weights *path to the image*`
