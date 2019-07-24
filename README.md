@@ -17,11 +17,24 @@ You can launch the GUI with the following command:
 
 You can download the `yolov3-helmet.weights` file [here](https://drive.google.com/file/d/1Ospb0zUYy-SDq3h9mtaGKDYpnP2UmnHY/view?usp=sharing)
 
+## [Linux]
+
 To launch the training use the following command:<br/>
-`./darknet detector test cfg/helmet.data cfg/yolov3-helmet.cfg weights/yolov3-helmet.weights`
+`./darknet detector train cfg/helmet.data cfg/yolov3-helmet.cfg weights/yolov3-helmet.weights`
 
 To test the neural network use the following command:<br/>
 `./darknet detector test cfg/helmet.data cfg/yolov3-helmet.cfg weights/yolov3-helmet.weights *path to the image*`
+
+## [Windows]
+
+Go into the `x64_windows_darknet` folder
+
+To launch the training use the following command:<br/>
+`.\darknet.exe detector test ../cfg/helmet.data ../cfg/yolov3-helmet.cfg ../weights/yolov3-helmet.weights`
+
+To test the neural network use the following command:<br/>
+`.\darknet.exe detector test ../cfg/helmet.data ../cfg/yolov3-helmet.cfg ../weights/yolov3-helmet.weights *path to the image*`
+
 
 You can find my Google colab notebook [here](https://colab.research.google.com/drive/18G9Vvop254As43gVXhPCXvP-6u6lsgqD).
 
