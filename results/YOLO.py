@@ -1,5 +1,5 @@
 import os
-
+import platform
 
 '''
 
@@ -22,7 +22,13 @@ class YOLO:
     @staticmethod
     def get_yolo_detection(image):
         if image != '' and image.split(".")[1] == 'jpg':
-            os.system(
-                '../darknet detector test ../cfg/coco.data ../cfg/yolov3.cfg ../weights/yolov3.weights -ext_output '
-                '-dont_show -out ../results/result.json ' + str(
-                    image))
+            if platform.system() == 'Windows':
+                os.system(
+                    '..\\x64_windows_darknet\darknet.exe detector test ../cfg/helmet.data ../cfg/yolov3-helmet.cfg ../weights/yolov3-helmet.weights -ext_output '
+                    '-dont_show -out ../results/result.json ' + str(
+                        image))
+            else:
+                os.system(
+                    '../darknet detector test ../cfg/coco.data ../cfg/yolov3.cfg ../weights/yolov3-heltmet.weights -ext_output '
+                    '-dont_show -out ../results/result.json ' + str(
+                        image))
