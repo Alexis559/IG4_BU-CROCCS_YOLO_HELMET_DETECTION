@@ -1,12 +1,12 @@
 #!python3
 
 
-"""
+'''
 
     MADE BY ALEXIS SANCHEZ IG4 - BU-CROCCS
     Script to analyse the objects detected by YOLO
 
-"""
+'''
 
 import json
 import argparse

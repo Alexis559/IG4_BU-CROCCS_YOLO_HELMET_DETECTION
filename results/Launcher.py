@@ -6,12 +6,12 @@ from ResultParser import *
 from PIL import ImageTk, Image
 import tkinter.filedialog as tkFiledialog
 
-"""
+'''
 
     MADE BY ALEXIS SANCHEZ IG4 - BU-CROCCS
     GUI to analyse YOLO objects detection
 
-"""
+'''
 
 """
     Class to handle the images: load and delete images to analyse
@@ -24,11 +24,52 @@ class ImgManager:
         self.clicked = False
         self.img = ''
         self.filename = ''
+        self.width_max = 1040
+        self.height_max = 657
+
+    """Function to resize the images when there are too big to be displayed
+        
+        Parameters
+        ----------
+        image : ??
+                The image to resize
+                
+        Returns
+        -------
+        ??
+            The image resized      
+    
+    """
+
+    def resize_img(self, image):
+        width, height = image.size
+        if width > self.width_max or height > self.height_max:
+            if width > height:
+                ratio = height/width
+                height = int(self.width_max * ratio)
+                image = image.resize((self.width_max, height), Image.ANTIALIAS)
+
+            else:
+                ratio = width/height
+                width = int(self.height_max * ratio)
+                image = image.resize((width, self.height_max), Image.ANTIALIAS)
+
+        return image
+
+    """Function called to change the current displayed image
+
+        Parameters
+        ----------
+        image_path : str
+                The path to the newest image
+
+    """
 
     def change_image(self, image_path):
         self.img.image = ''
         self.img.pack_forget()
         load = Image.open(image_path)
+        load = self.resize_img(load)
         render = ImageTk.PhotoImage(load)
         self.img = tk.Label(main_window, image=render)
         self.img.image = render
@@ -52,6 +93,7 @@ class ImgManager:
 
                 # We open the image and displaying the image
                 load = Image.open(self.filename)
+                load = self.resize_img(load)
                 render = ImageTk.PhotoImage(load)
                 self.img = tk.Label(main_window, image=render)
                 self.img.image = render
@@ -66,7 +108,7 @@ class ImgManager:
 
 """
 
-    Function called when the detect button is pressed to analyse the image and get the YOLO results
+    Function called when the detect button is pressed to analyse the image and get the YOLO's results
 
 """
 
@@ -81,6 +123,11 @@ def get_yolo_infos():
     yolo_infos_text.set(results.get_objects_text())
     img_manager.change_image("predictions.jpg")
     print(results.get_objects_text())
+
+
+"""
+    MAIN FUNCION - Prepare and launch the main window
+"""
 
 if __name__ == '__main__':
     img_manager = ImgManager()
