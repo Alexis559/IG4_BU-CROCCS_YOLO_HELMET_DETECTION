@@ -17,7 +17,7 @@ You can launch the GUI with the following command:
 
 You can download the `yolov3-helmet.weights` file [here](https://drive.google.com/file/d/1Ospb0zUYy-SDq3h9mtaGKDYpnP2UmnHY/view?usp=sharing)
 
-## [Linux]
+## Linux
 
 To launch the training use the following command:<br/>
 `./darknet detector train cfg/helmet.data cfg/yolov3-helmet.cfg weights/yolov3-helmet.weights`
@@ -25,7 +25,7 @@ To launch the training use the following command:<br/>
 To test the neural network use the following command:<br/>
 `./darknet detector test cfg/helmet.data cfg/yolov3-helmet.cfg weights/yolov3-helmet.weights *path to the image*`
 
-## [Windows]
+## Windows
 
 Go into the `x64_windows_darknet` folder
 
