@@ -1,9 +1,12 @@
 [
 {
  "frame_id":1, 
- "filename":"/home/alexis/Bureau/IG4_BU-CROCCS_YOLO_HELMET_DETECTION/data/motard.jpg", 
+ "filename":"/home/alexis/Bureau/IG4_BU-CROCCS_YOLO_HELMET_DETECTION/data/horses.jpg", 
  "objects": [ 
-  {"class_id":0, "name":"person", "relative_coordinates":{"center_x":0.369554, "center_y":0.558626, "width":0.701727, "height":0.957447}, "confidence":0.269013}
+  {"class_id":17, "name":"horse", "relative_coordinates":{"center_x":0.670536, "center_y":0.546552, "width":0.211395, "height":0.262669}, "confidence":0.998319}, 
+  {"class_id":17, "name":"horse", "relative_coordinates":{"center_x":0.206653, "center_y":0.590487, "width":0.395335, "height":0.442230}, "confidence":0.996872}, 
+  {"class_id":17, "name":"horse", "relative_coordinates":{"center_x":0.443615, "center_y":0.547864, "width":0.249974, "height":0.324406}, "confidence":0.904239}, 
+  {"class_id":17, "name":"horse", "relative_coordinates":{"center_x":0.111921, "center_y":0.548778, "width":0.212139, "height":0.390403}, "confidence":0.877573}
  ] 
 }
 ]

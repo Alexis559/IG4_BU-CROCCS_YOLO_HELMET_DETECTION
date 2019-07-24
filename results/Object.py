@@ -88,6 +88,3 @@ class Object:
 
     def get_area(self):
         return (self.x_max - self.x_min) * (self.y_max - self.y_min)
-
-    def to_string(self):
-        return self.label + ": " + str(round(self.confidence * 100, 2))

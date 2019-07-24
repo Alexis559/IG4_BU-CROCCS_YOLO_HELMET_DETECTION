@@ -15,7 +15,7 @@ class ResultParser:
            ----------
            path_json : str
                    The path where the json file produced by YOLO is stored
-    """
+       """
 
     def __init__(self, path_json):
         self.path_json = path_json
@@ -45,6 +45,6 @@ class ResultParser:
     def get_objects_text(self):
         text = "=====   YOLO RESULTS   =====\n\n"
         for object in self.objects:
-            text = text + object.to_string() + "%\n"
+            text = text + object.label + ": " + str((object.confidence * 100)) + "%\n"
 
         return text
