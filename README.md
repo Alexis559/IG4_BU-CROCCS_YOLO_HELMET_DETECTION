@@ -5,7 +5,7 @@ Yolo Application to detect drivers who are not wearing helmets while there are d
 Trained on 3 classes using the [Coco dataset](https://cocodataset.org/#home):
 
 * Person
-* Motobike
+* Motorbike
 * Helmet
 
 The training was made by using [Google Colaboratory](https://colab.research.google.com)
