@@ -38,6 +38,11 @@ To test the neural network use the following command:<br/>
 
 You can find my Google colab notebook [here](https://colab.research.google.com/drive/18G9Vvop254As43gVXhPCXvP-6u6lsgqD).
 
+
+You can find a PDF manual that explains the work I did with Google colab to train my neural network [here](https://github.com/Alexis559/IG4_BU-CROCCS_YOLO_HELMET_DETECTION/blob/master/How%20to%20train%20YOLOv3%20with%20Google%20Colab.pdf)
+
+
+
 ### Technologies:
 [YOLOv3](https://pjreddie.com/darknet/yolo/)<br/>
 [Darknet fork from AlexeyAB](https://github.com/AlexeyAB/darknet)<br/>
