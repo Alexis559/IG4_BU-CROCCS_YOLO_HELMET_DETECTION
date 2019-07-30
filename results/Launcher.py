@@ -131,7 +131,7 @@ def get_yolo_infos():
 
 if __name__ == '__main__':
     img_manager = ImgManager()
-    results = ResultParser("../results/result2.json")
+    results = ResultParser("../results/result.json")
 
     # We create a new window
     main_window = tk.Tk()

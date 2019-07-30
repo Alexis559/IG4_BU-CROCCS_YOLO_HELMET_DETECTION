@@ -51,7 +51,7 @@ if __name__ == "__main__":
 
         for object in line['objects']:
             # We add to the list the object
-            objects.append(Object(line['filename'], object['name'], object['confidence'], object['relative_coordinates']['center_x'],
+            objects.append(Object(line['filename'], object['name'], object['relative_coordinates']['center_x'],
                                   object['relative_coordinates']['center_y'], object['relative_coordinates']['width'],
                                   object['relative_coordinates']['height']))
 
@@ -63,7 +63,7 @@ if __name__ == "__main__":
             if object.label == 'motorbike':
                 for object2 in objects:
                     if object2.label == 'person':
-                        if is_driver(object, object2):
+                        if is_driver(object2, object):
                             driver.append(object2)
 
         for person in driver:
@@ -72,10 +72,8 @@ if __name__ == "__main__":
                     if wear_helmet(person, object2):
                         wearing_helmet.append(object2)
 
-        get_analysis = (len(driver) == len(wearing_helmet)) and (len(driver) != 0)
-
         print('===============   ' + str(line['frame_id']) + '   ===============')
-        print('results: ' + str(get_analysis))
+        print('results: ' + str(len(driver) == len(wearing_helmet)))
         print("\n\n")
 
 print("Execution Time : --- %s seconds ---" % (time.time() - start_time))
