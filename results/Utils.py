@@ -48,10 +48,10 @@ def intersection(box1, box2):
 """
 
 
-def is_driver(person, motorcycle):
+def is_driver(motorcycle, person):
     driver = False
-    intersect = intersection(person, motorcycle)
-    if intersect >= 0.3:
+    intersect = intersection(motorcycle, person)
+    if intersect >= 0.6:
         driver = True
 
     return driver
@@ -74,4 +74,4 @@ def is_driver(person, motorcycle):
 
 
 def wear_helmet(person, helmet):
-    return intersection(person, helmet) >= 0.98
+    return intersection(person, helmet) >= 0.95

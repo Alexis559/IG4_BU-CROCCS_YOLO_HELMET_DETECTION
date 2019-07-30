@@ -25,10 +25,10 @@ class YOLO:
             if platform.system() == 'Windows':
                 os.system(
                     '..\\x64_windows_darknet\darknet.exe detector test ../cfg/helmet.data ../cfg/yolov3-helmet.cfg ../weights/yolov3-helmet.weights -ext_output '
-                    '-dont_show -out ../results/result.json ' + str(
+                    '-dont_show -out ../results/result2.json ' + str(
                         image))
             else:
                 os.system(
                     '../darknet detector test ../cfg/coco.data ../cfg/yolov3.cfg ../weights/yolov3-heltmet.weights -ext_output '
-                    '-dont_show -out ../results/result.json ' + str(
+                    '-dont_show -out ../results/result2.json ' + str(
                         image))

@@ -1,0 +1,9 @@
+[
+{
+ "frame_id":1, 
+ "filename":"C:/Users/Alexis/Desktop/IG4_BU-CROCCS_YOLO_HELMET_DETECTION/data/scooter3.jpg", 
+ "objects": [ 
+  {"class_id":0, "name":"person", "relative_coordinates":{"center_x":0.493788, "center_y":0.417052, "width":0.257555, "height":0.593605}, "confidence":0.890248}
+ ] 
+}
+]
