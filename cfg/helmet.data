@@ -1,3 +1,4 @@
 classes= 3
 names = ../data/helmet.names
-
+train = helmet.txt
+valid = helmet.txt

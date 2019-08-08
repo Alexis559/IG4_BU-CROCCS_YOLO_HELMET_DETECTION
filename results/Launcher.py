@@ -112,7 +112,6 @@ class ImgManager:
 
 """
 
-
 def get_yolo_infos():
     # We call the YOLO analyse
     YOLO.get_yolo_detection(img_manager.filename)
@@ -147,7 +146,6 @@ if __name__ == '__main__':
 
     btn_image_text = tk.StringVar()
     yolo_infos_text = tk.StringVar()
-    action_detect_image = lambda: YOLO.get_yolo_detection(img_manager.filename)
     action_image_btn = lambda: img_manager.get_file_name()
 
     # Creation of the 2 buttons at the bottom

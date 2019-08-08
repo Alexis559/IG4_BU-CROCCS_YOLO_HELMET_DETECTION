@@ -45,6 +45,6 @@ class ResultParser:
     def get_objects_text(self):
         text = "=====   YOLO RESULTS   =====\n\n"
         for object in self.objects:
-            text = text + object.label + ": " + str((object.confidence * 100)) + "%\n"
+            text = text + object.label + ": " + str(round((object.confidence * 100), 2)) + "%\n"
 
         return text

@@ -17,6 +17,8 @@ class Object:
                 The path of the image
         label : str
                 The predicted class for the object
+        confidence : float
+                The confidence score for this object (> 0 & < 1)
         x_center : float
                 The x center of the bounding box (YOLO annotation > 0 && < 1)
         y_center : float
@@ -85,6 +87,9 @@ class Object:
         self.x_max = self.xcenterreal + self.boxwidthreal / 2
         self.y_min = self.ycenterceal - self.boxheightreal / 2
         self.y_max = self.ycenterceal + self.boxheightreal / 2
+
+    """Function to calculate the area of the bounding box    
+    """
 
     def get_area(self):
         return (self.x_max - self.x_min) * (self.y_max - self.y_min)
