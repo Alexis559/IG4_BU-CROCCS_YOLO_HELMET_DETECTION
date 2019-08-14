@@ -1,5 +1,6 @@
 import json
 from Object import Object
+from Utils import  *
 
 '''
 
@@ -41,6 +42,30 @@ class ResultParser:
 
     def get_objects(self):
         return self.objects
+
+    def get_analysis(self, images_folder):
+        driver = []
+        wearing_helmet = []
+        objects = self.get_objects()
+
+        for object in objects:
+            object.calculaterealcoordinates(images_folder)
+            object.calculaterealpredictionbox()
+
+        for object in objects:
+            if object.label == 'motorbike':
+                for object2 in objects:
+                    if object2.label == 'person':
+                        if is_driver(object, object2):
+                            driver.append(object2)
+
+        for person in driver:
+            for object2 in objects:
+                if object2.label == 'helmet':
+                    if wear_helmet(person, object2):
+                        wearing_helmet.append(object2)
+
+        return driver, wearing_helmet
 
     def get_objects_text(self):
         text = "=====   YOLO RESULTS   =====\n\n"

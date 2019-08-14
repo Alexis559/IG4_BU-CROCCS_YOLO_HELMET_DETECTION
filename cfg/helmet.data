@@ -1,4 +1,5 @@
 classes= 3
+train = ../DATASET/helmet_train.txt
+valid = ../DATASET/helmet_test.txt
 names = ../data/helmet.names
-train = helmet.txt
-valid = helmet.txt
+backup = ../backup

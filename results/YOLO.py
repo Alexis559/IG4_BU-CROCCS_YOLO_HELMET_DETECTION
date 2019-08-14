@@ -24,12 +24,12 @@ class YOLO:
         if image != '' and image.split(".")[1] == 'jpg':
             if platform.system() == 'Windows':
                 os.system(
-                    '..\\x64_windows_darknet\darknet.exe detector test ../cfg/helmet.data ../cfg/yolov3-helmet.cfg ../weights/yolov3-helmet.weights -ext_output '
+                    '..\\x64_windows_darknet\darknet.exe detector test ../cfg/helmet.data ../cfg/yolov3-helmet.cfg ../weights/yolov3-helmet.weights -thresh 0.1 -ext_output '
                     '-dont_show -out ../results/result.json ' + str(
                         image))
             else:
                 os.system(
-                    '../darknet detector test ../cfg/coco.data ../cfg/yolov3.cfg ../weights/yolov3-heltmet.weights -ext_output '
+                    '../darknet detector test ../cfg/coco.data ../cfg/yolov3.cfg ../weights/yolov3-helmet.weights -thresh 0.05 -ext_output '
                     '-dont_show -out ../results/result.json ' + str(
                         image))
 
@@ -46,12 +46,12 @@ class YOLO:
         if video != '' and (video.split(".")[1] == 'mp4' or video.split(".")[1] == 'mkv' or video.split(".")[1] == 'avi'):
             if platform.system() == 'Windows':
                 os.system(
-                    '..\\x64_windows_darknet\darknet.exe detector demo ../cfg/helmet.data ../cfg/yolov3-helmet.cfg ../weights/yolov3-helmet.weights -ext_output '
+                    '..\\x64_windows_darknet\darknet.exe detector demo ../cfg/helmet.data ../cfg/yolov3-helmet.cfg ../weights/yolov3-helmet.weights -thresh 0.05 -ext_output '
                     '-out ../results/result.json ' + str(
                         video))
             else:
                 os.system(
-                    '../darknet detector demo ../cfg/coco.data ../cfg/yolov3.cfg ../weights/yolov3-heltmet.weights -ext_output '
+                    '../darknet detector demo ../cfg/coco.data ../cfg/yolov3.cfg ../weights/yolov3-helmet.weights -thresh 0.05 -ext_output '
                     '-out ../results/result.json ' + str(
                         video))
 
@@ -65,8 +65,8 @@ class YOLO:
         if platform.system() == 'Windows':
             os.system(
                 '..\\x64_windows_darknet\darknet.exe detector demo ../cfg/helmet.data ../cfg/yolov3-helmet.cfg ../weights/yolov3-helmet.weights '
-                '-c 0')
+                '-thresh 0.05 -c 0')
         else:
             os.system(
-                '../darknet detector demo ../cfg/coco.data ../cfg/yolov3.cfg ../weights/yolov3-heltmet.weights -ext_output '
+                '../darknet detector demo ../cfg/coco.data ../cfg/yolov3.cfg ../weights/yolov3-helmet.weights -thresh 0.05 -ext_output '
                 '-out ../results/result.json -c 0')

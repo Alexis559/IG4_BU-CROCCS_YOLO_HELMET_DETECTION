@@ -9,18 +9,18 @@
     ]
   },
   {
-    "frame_id":2,
+    "frame_id":1,
     "filename":"data/scooter.jpg",
     "objects": [
-      {"class_id":1, "name":"helmet", "relative_coordinates":{"center_x":0.592666666667, "center_y":0.342274678112, "width":0.084, "height":0.148068669528}, "confidence":1},
-      {"class_id":1, "name":"helmet", "relative_coordinates":{"center_x":0.675333333333, "center_y":0.305793991416, "width":0.0786666666667, "height":0.152360515021}, "confidence":1},
-      {"class_id":0, "name":"person", "relative_coordinates":{"center_x":0.550666666667, "center_y":0.562231759657, "width":0.205333333333, "height":0.570815450644}, "confidence":1},
-      {"class_id":0, "name":"person", "relative_coordinates":{"center_x":0.629333333333, "center_y":0.536480686695, "width":0.2, "height":0.609442060086}, "confidence":1},
-      {"class_id":2, "name":"motorbike", "relative_coordinates":{"center_x":0.549333333333, "center_y":0.709227467811, "width":0.485333333333, "height":0.551502145923}, "confidence":1}
+      {"class_id":2, "name":"helmet", "relative_coordinates":{"center_x":0.592666, "center_y":0.342222, "width":0.084, "height":0.148}, "confidence":0.42345},
+      {"class_id":2, "name":"helmet", "relative_coordinates":{"center_x":0.675333, "center_y":0.305793, "width":0.078, "height":0.152}, "confidence":0.31543},
+      {"class_id":0, "name":"person", "relative_coordinates":{"center_x":0.550666, "center_y":0.562231, "width":0.205, "height":0.570}, "confidence":0.58416},
+      {"class_id":0, "name":"person", "relative_coordinates":{"center_x":0.629333, "center_y":0.536480, "width":0.2, "height":0.609}, "confidence":0.51487},
+      {"class_id":1, "name":"motorbike", "relative_coordinates":{"center_x":0.549333, "center_y":0.709227, "width":0.485, "height":0.551}, "confidence":0.47942}
     ]
   },
   {
-    "frame_id":3,
+    "frame_id":2,
     "filename":"data/scooter2.jpg",
     "objects": [
       {"class_id":2, "name":"motorbike", "relative_coordinates":{"center_x":0.505625, "center_y":0.655, "width":0.98125, "height":0.6525}, "confidence":1},
@@ -29,7 +29,7 @@
     ]
   },
   {
-    "frame_id":4,
+    "frame_id":3,
     "filename":"data/scooter3.jpg",
     "objects": [
       {"class_id":0, "name":"person", "relative_coordinates":{"center_x":0.466666666667, "center_y":0.421364985163, "width":0.24, "height":0.611275964392}, "confidence":1},

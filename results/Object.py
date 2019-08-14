@@ -46,7 +46,7 @@ class Object:
         self.box_width = box_width
         self.box_height = box_height
         self.xcenterreal = None
-        self.ycenterceal = None
+        self.ycenterreal = None
         self.boxwidthreal = None
         self.boxheightreal = None
         self.x_min = None
@@ -64,13 +64,11 @@ class Object:
     def calculaterealcoordinates(self, images_folder):
         image = Image.open(images_folder + "/" + self.image_name)
         self.xcenterreal = self.x_center * image.size[0]
-        self.ycenterceal = self.y_center * image.size[1]
+        self.ycenterreal = self.y_center * image.size[1]
         self.boxwidthreal = self.box_width * image.size[0]
         self.boxheightreal = self.box_height * image.size[1]
 
     """To calculate the top left point and the bottom right point of the prediction box which correspond to the (x_min, y_min) and (x_max, y_max)
-        
-        Do a diagram if you are not sure about what are doing this function
         
         Pixel count start at the top left of the image (0,0) ----------------> (x)
                                                          |
@@ -85,11 +83,12 @@ class Object:
     def calculaterealpredictionbox(self):
         self.x_min = self.xcenterreal - self.boxwidthreal / 2
         self.x_max = self.xcenterreal + self.boxwidthreal / 2
-        self.y_min = self.ycenterceal - self.boxheightreal / 2
-        self.y_max = self.ycenterceal + self.boxheightreal / 2
+        self.y_min = self.ycenterreal - self.boxheightreal / 2
+        self.y_max = self.ycenterreal + self.boxheightreal / 2
 
     """Function to calculate the area of the bounding box    
     """
 
     def get_area(self):
-        return (self.x_max - self.x_min) * (self.y_max - self.y_min)
+        return self.boxwidthreal * self.boxheightreal
+

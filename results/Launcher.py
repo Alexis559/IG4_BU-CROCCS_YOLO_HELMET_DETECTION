@@ -118,8 +118,11 @@ def get_yolo_infos():
 
     # We get the results
     results.parse_yolo_result()
+    drivers, wearing_helmet = results.get_analysis('../data')
 
-    yolo_infos_text.set(results.get_objects_text())
+    analysis = results.get_objects_text() + "\n\n\n" + str(len(drivers)) + ' drivers \n' + str(len(wearing_helmet)) + ' wears a helmet !'
+
+    yolo_infos_text.set(analysis)
     img_manager.change_image("predictions.jpg")
     print(results.get_objects_text())
 

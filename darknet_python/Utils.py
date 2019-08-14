@@ -4,7 +4,7 @@
 
 """
 
-"""Function to calculate how much box1 is overlapped by box2
+"""Function to calculate how much box2 is overlapped by box1
     
     Parameters
     ----------
@@ -14,7 +14,7 @@
     Returns
     -------
     float
-        the percentage of overlapping of box1 by box2
+        the percentage of overlapping of box2 by box1
 """
 
 
@@ -74,4 +74,4 @@ def is_driver(motorcycle, person):
 
 
 def wear_helmet(person, helmet):
-    return intersection(person, helmet) >= 0.95
+    return intersection(person, helmet) >= 0.60
