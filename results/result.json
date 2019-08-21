@@ -1,0 +1,11 @@
+[
+{
+ "frame_id":1, 
+ "filename":"C:/Users/Alexis/Desktop/IG4_BU-CROCCS_YOLO_HELMET_DETECTION/data/scooter4.jpg", 
+ "objects": [ 
+  {"class_id":2, "name":"helmet", "relative_coordinates":{"center_x":0.350179, "center_y":0.294103, "width":0.064364, "height":0.128688}, "confidence":0.124718}, 
+  {"class_id":1, "name":"motorbike", "relative_coordinates":{"center_x":0.408727, "center_y":0.663122, "width":0.401446, "height":0.531416}, "confidence":0.606877}, 
+  {"class_id":0, "name":"person", "relative_coordinates":{"center_x":0.406979, "center_y":0.522214, "width":0.275287, "height":0.632487}, "confidence":0.775981}
+ ] 
+}
+]

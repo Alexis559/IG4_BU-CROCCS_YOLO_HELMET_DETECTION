@@ -42,13 +42,13 @@ def cvDrawBoxes(detections, img):
                 cv2.rectangle(img, pt1, pt2, (255, 0, 0), 2)
                 color = [255, 0, 0]
 
-            # If the person is alone we display a white bounding boxe
+            # If the person is alone we display a white bounding box
             else:
                 cv2.rectangle(img, pt1, pt2, (255, 255, 255), 1)
         else:
             cv2.rectangle(img, pt1, pt2, (255, 255, 255), 1)
 
-
+        # Display the label of the object next to the bounding box
         cv2.putText(img,
                     detection.label +
                     " [" + str(round(detection.confidence * 100, 2)) + "]",
@@ -126,13 +126,14 @@ def YOLO(cfg_file, weights_file, data_file, video_file, threshold):
         darknet.copy_image_from_bytes(darknet_image,frame_resized.tobytes())
 
         detections = darknet.detect_image(netMain, metaMain, darknet_image, thresh=threshold)
-		
+
         # BEGINNING OF THE ANALYSIS
 
-        objects = []
-        drivers = []
-        wearing_helmet = []
+        objects = []  # Objects detected by YOLO
+        drivers = []  # Persons considered as drivers
+        wearing_helmet = []  # Persons wearing a helmet
 
+        # We get all the objects detected by YOLO
         for obj in detections:
             objects.append(Object(obj[0].decode("utf-8") , obj[1], obj[2][0], obj[2][1], obj[2][2], obj[2][3]))
 
@@ -144,8 +145,8 @@ def YOLO(cfg_file, weights_file, data_file, video_file, threshold):
                 for object2 in objects:
                     # If the object is a person and has not been already associated with a motorbike
                     if object2.label == 'person' and len(object2.objects_related) == 0:
-                        if is_driver(object, object2):
-                            # We create the association between the motorbike and the person
+                        if is_driver(object, object2):  # If there is a relation between the person and the motorbike
+                            # We create the association between the motorbike and the person for the bounding box drawing
                             object.objects_related.append(object2)
                             object2.objects_related.append(object)
                             drivers.append(object2)
@@ -153,7 +154,8 @@ def YOLO(cfg_file, weights_file, data_file, video_file, threshold):
         for person in drivers:
             for object2 in objects:
                 if object2.label == 'helmet':
-                    if wear_helmet(person, object2):
+                    if wear_helmet(person, object2):  # If there is a relation between the person and the helmet
+                        # We create the association between the helmet and the person for the bounding box drawing
                         person.objects_related.append(object2)
                         object2.objects_related.append(person)
                         wearing_helmet.append(object2)
