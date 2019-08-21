@@ -114,7 +114,7 @@ class ImgManager:
 
 def get_yolo_infos():
     # We call the YOLO analyse
-    YOLO.get_yolo_detection(img_manager.filename)
+    YOLO.get_yolo_detection(img_manager.filename, 0.1)
 
     # We get the results
     results.parse_yolo_result()

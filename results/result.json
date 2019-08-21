@@ -1,11 +1,11 @@
 [
 {
  "frame_id":1, 
- "filename":"C:/Users/Alexis/Desktop/IG4_BU-CROCCS_YOLO_HELMET_DETECTION/data/scooter4.jpg", 
+ "filename":"C:/Users/Alexis/Desktop/IG4_BU-CROCCS_YOLO_HELMET_DETECTION/data/scooter3.jpg", 
  "objects": [ 
-  {"class_id":2, "name":"helmet", "relative_coordinates":{"center_x":0.350179, "center_y":0.294103, "width":0.064364, "height":0.128688}, "confidence":0.124718}, 
-  {"class_id":1, "name":"motorbike", "relative_coordinates":{"center_x":0.408727, "center_y":0.663122, "width":0.401446, "height":0.531416}, "confidence":0.606877}, 
-  {"class_id":0, "name":"person", "relative_coordinates":{"center_x":0.406979, "center_y":0.522214, "width":0.275287, "height":0.632487}, "confidence":0.775981}
+  {"class_id":2, "name":"helmet", "relative_coordinates":{"center_x":0.481048, "center_y":0.170161, "width":0.101312, "height":0.091231}, "confidence":0.149361}, 
+  {"class_id":1, "name":"motorbike", "relative_coordinates":{"center_x":0.509695, "center_y":0.558702, "width":0.509521, "height":0.472995}, "confidence":0.659270}, 
+  {"class_id":0, "name":"person", "relative_coordinates":{"center_x":0.477953, "center_y":0.411085, "width":0.259581, "height":0.599195}, "confidence":0.708842}
  ] 
 }
 ]

@@ -23,6 +23,18 @@ from Utils import *
     
 '''
 
+""" Function to draw the bounding boxes on the frame of the video
+
+    Parameters
+    ----------
+    detections : Object[]
+        The objects predicted by YOLO
+    
+    img : ?
+        The frame on which we will print the bounding boxes
+
+"""
+
 def cvDrawBoxes(detections, img):
     for detection in detections:
         pt1 = (int(round(detection.x_min)), int(round(detection.y_min)))
@@ -60,6 +72,23 @@ def cvDrawBoxes(detections, img):
 netMain = None
 metaMain = None
 altNames = None
+
+""" Function analyse the video
+
+    Parameters
+    ----------
+    cfg_file : str
+        path to the cfg file of YOLO
+    weights_file : str
+        path to the weights file of YOLO
+    data_file : str
+        path to the data file of YOLO
+    video_file : str
+        path to the video to analyse
+    threshold : float
+        threshold for YOLO detection
+
+"""
 
 
 def YOLO(cfg_file, weights_file, data_file, video_file, threshold):
@@ -116,6 +145,7 @@ def YOLO(cfg_file, weights_file, data_file, video_file, threshold):
                                     darknet.network_height(netMain),3)
     while True:
         prev_time = time.time()
+        # We extract a frame of the video, we convert it to the RGB format and we resize it for the detection
         ret, frame_read = cap.read()
         frame_rgb = cv2.cvtColor(frame_read, cv2.COLOR_BGR2RGB)
         frame_resized = cv2.resize(frame_rgb,
@@ -140,6 +170,7 @@ def YOLO(cfg_file, weights_file, data_file, video_file, threshold):
         for obj in objects:
             obj.calculaterealpredictionbox()
 
+        # We check for relations between the persons and the motorbikes
         for object in objects:
             if object.label == 'motorbike':
                 for object2 in objects:
@@ -151,6 +182,7 @@ def YOLO(cfg_file, weights_file, data_file, video_file, threshold):
                             object2.objects_related.append(object)
                             drivers.append(object2)
 
+        # We check for relations between the drivers found previously and the helmets
         for person in drivers:
             for object2 in objects:
                 if object2.label == 'helmet':

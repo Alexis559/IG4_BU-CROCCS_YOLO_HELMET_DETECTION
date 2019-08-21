@@ -68,7 +68,7 @@ class Object:
         self.boxwidthreal = self.box_width * image.size[0]
         self.boxheightreal = self.box_height * image.size[1]
 
-    """To calculate the top left point and the bottom right point of the prediction box which correspond to the (x_min, y_min) and (x_max, y_max)
+    """To calculate the top left point and the bottom right point of the bounding box which correspond to the (x_min, y_min) and (x_max, y_max)
         
         Pixel count start at the top left of the image (0,0) ----------------> (x)
                                                          |

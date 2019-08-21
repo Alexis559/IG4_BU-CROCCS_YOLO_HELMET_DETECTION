@@ -20,7 +20,7 @@ from Utils import *
 start_time = time.time()
 
 """
-    Arguments
+    Parameters
     ----------
     json_path : str
             The path of json file produced by YOLO where the predictions are written
@@ -59,6 +59,7 @@ if __name__ == "__main__":
             object.calculaterealcoordinates(args.images_folder)
             object.calculaterealpredictionbox()
 
+        # We check for relations between the persons and the motorbikes
         for object in objects:
             if object.label == 'motorbike':
                 for object2 in objects:
@@ -66,16 +67,19 @@ if __name__ == "__main__":
                         if is_driver(object, object2):
                             driver.append(object2)
 
+        # We check for relations between the drivers found previously and the helmets
         for person in driver:
             for object2 in objects:
                 if object2.label == 'helmet':
                     if wear_helmet(person, object2):
                         wearing_helmet.append(object2)
 
+        # If the number of drivers wearing a helmet is equal to the number of drivers then everyone wears a helmet
         get_analysis = (len(driver) == len(wearing_helmet)) and (len(driver) != 0)
 
         print('===============   ' + str(line['frame_id']) + '   ===============')
         print('results: ' + str(get_analysis))
         print("\n\n")
 
+# Execution time to know the impact of the analysis
 print("Execution Time : --- %s seconds ---" % (time.time() - start_time))

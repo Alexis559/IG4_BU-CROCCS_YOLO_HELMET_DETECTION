@@ -24,12 +24,6 @@ def intersection(box1, box2):
     intersec = (x_overlap * y_overlap)/box2.get_area()
     return intersec
 
-#box1 = personne
-#box2 = helmet
-
-#def is_in(box1, box2):
-   # return (box2.x_min >= box1.x_min and box2.y_min >= box1.y_min and box1.x_max >= box2.x_max and ((box1.y_max - box1.y_min)*0.3+box1.y_min) >= box2.y_max)
-
 
 """To know if the person in parameter is the driver of the motorbike
 
@@ -51,7 +45,7 @@ def intersection(box1, box2):
 def is_driver(motorcycle, person):
     driver = False
     intersect = intersection(motorcycle, person)
-    if intersect >= 0.4:
+    if intersect >= 0.5:
         driver = True
 
     return driver
@@ -74,4 +68,4 @@ def is_driver(motorcycle, person):
 
 
 def wear_helmet(person, helmet):
-    return intersection(person, helmet) >= 0.95
+    return intersection(person, helmet) >= 0.90

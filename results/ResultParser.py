@@ -16,10 +16,14 @@ class ResultParser:
            ----------
            path_json : str
                    The path where the json file produced by YOLO is stored
-       """
+    """
 
     def __init__(self, path_json):
         self.path_json = path_json
+
+    """ Function to read and parse the JSON results file from YOLO detection
+    
+    """
 
     def parse_yolo_result(self):
         with open(self.path_json) as JsonFile:
@@ -43,6 +47,15 @@ class ResultParser:
     def get_objects(self):
         return self.objects
 
+    """ Function to analyse the YOLO results to know if there are drivers who are wearing their helmet
+    
+           Parameters
+           ----------
+           images_folder : str
+                   The path where the image analysed is stored
+                       
+    """
+
     def get_analysis(self, images_folder):
         driver = []
         wearing_helmet = []
@@ -52,6 +65,7 @@ class ResultParser:
             object.calculaterealcoordinates(images_folder)
             object.calculaterealpredictionbox()
 
+        # We check for relations between the persons and the motorbikes
         for object in objects:
             if object.label == 'motorbike':
                 for object2 in objects:
@@ -59,6 +73,7 @@ class ResultParser:
                         if is_driver(object, object2):
                             driver.append(object2)
 
+        # We check for relations between the drivers found previously and the helmets
         for person in driver:
             for object2 in objects:
                 if object2.label == 'helmet':
