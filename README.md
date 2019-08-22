@@ -24,7 +24,7 @@ You can find in the **darknet_python** folder all the classes to process the YOL
 You can launch the GUI for videos analysis with the following command:
 `python3 darknet_video_helmet.py ../cfg/yolov3-helmet.cfg ../weights/yolov3-helmet.weights ../cfg/helmet.data *path to the video* *threshold for the objects detection*`
 
-You can download the `yolov3-helmet.weights` file [here](https://drive.google.com/file/d/1Ospb0zUYy-SDq3h9mtaGKDYpnP2UmnHY/view?usp=sharing)
+You can download the `yolov3-helmet.weights` file [here](https://drive.google.com/file/d/12ltZYcccMbaYrAJmzhgj6IbwMraV2VqV/view?usp=sharing)
 
 ## Darknet commands with Linux
 
